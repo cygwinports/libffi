@@ -1,0 +1,9 @@
+DESCRIPTION="Portable foreign function interface library"
+HOMEPAGE="http://sourceware.org/libffi/"
+SRC_URI="ftp://sourceware.org/pub/libffi/${P}.tar.gz"
+PATCH_URI="3.0-no-undefined.patch"
+
+PKG_NAMES="${PN} ${PN}5 ${PN}-devel"
+PKG_HINTS="src dll devel"
+libffi5_CONTENTS="usr/bin/*-5.dll usr/share/doc/"
+libffi_devel_CONTENTS="usr/lib/ usr/share/info/ usr/share/man/man3/"

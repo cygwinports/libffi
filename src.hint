@@ -1,4 +1,4 @@
-category: _source
+category: Libs
 sdesc: "Portable foreign function interface library (source)"
 ldesc: "The libffi library provides a portable, high level programming 
 interface to various calling conventions. This allows a programmer to 

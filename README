@@ -8,14 +8,14 @@ Runtime requirements:
   cygwin-1.5.25-15
 
 Build requirements:
-  autoconf2.5-2.61-1
-  automake1.10-1.10.1-1
+  autoconf2.5-2.63-1
+  automake1.10-1.10.1-2
   binutils-20080624-2
-  cygport-0.4.0-1
+  cygport-0.4.3-1
   dejagnu-1.4.4-1
   gawk-3.1.6-1
   gcc-core-3.4.4-3
-  libtool-2.2.2-2
+  libtool-2.2.6a-1
   make-3.81-1
   sed-4.1.5-2
 
@@ -28,17 +28,16 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack libffi-3.0.6-X-src.tar.bz2
+  unpack libffi-3.0.8-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./libffi-3.0.6-X.cygport all
+  cygport ./libffi-3.0.8-X.cygport all
 
 This will create:
-  /usr/src/libffi-3.0.6-X-src.tar.bz2
-  /usr/src/libffi-3.0.6-X.tar.bz2
-  /usr/src/libffi-devel-3.0.6-X.tar.bz2
-  /usr/src/libffi5-3.0.6-X.tar.bz2
+  /usr/src/libffi-3.0.8-X-src.tar.bz2
+  /usr/src/libffi-devel-3.0.8-X.tar.bz2
+  /usr/src/libffi5-3.0.8-X.tar.bz2
 
 -------------------------------------------
 
@@ -46,14 +45,14 @@ Files included in the binary package:
 
 (libffi5)
   /usr/bin/cygffi-5.dll
-  /usr/share/doc/libffi-3.0.6/ChangeLog
-  /usr/share/doc/libffi-3.0.6/LICENSE
-  /usr/share/doc/libffi-3.0.6/README
-  /usr/share/doc/libffi-3.0.6/TODO
+  /usr/share/doc/libffi-3.0.8/ChangeLog
+  /usr/share/doc/libffi-3.0.8/LICENSE
+  /usr/share/doc/libffi-3.0.8/README
+  /usr/share/doc/libffi-3.0.8/TODO
 
 (libffi-devel)
-  /usr/lib/libffi-3.0.6/include/ffi.h
-  /usr/lib/libffi-3.0.6/include/ffitarget.h
+  /usr/lib/libffi-3.0.8/include/ffi.h
+  /usr/lib/libffi-3.0.8/include/ffitarget.h
   /usr/lib/libffi.a
   /usr/lib/libffi.dll.a
   /usr/lib/libffi.la
@@ -66,6 +65,9 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 3.0.8-1 -----
+Version bump.
 
 ----- version 3.0.6-1 -----
 Initial release for Cygwin.
