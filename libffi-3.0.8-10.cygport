@@ -1,9 +1,19 @@
 DESCRIPTION="Portable foreign function interface library"
 HOMEPAGE="http://sourceware.org/libffi/"
 SRC_URI="ftp://sourceware.org/pub/libffi/${P}.tar.gz"
-PATCH_URI="3.0-no-undefined.patch"
+PATCH_URI="3.0-no-undefined.patch
+           3.0-parallel-with-gcc4.patch"
 
 PKG_NAMES="${PN} ${PN}5 ${PN}-devel"
 PKG_HINTS="src dll devel"
 libffi5_CONTENTS="usr/bin/*-5.dll usr/share/doc/"
 libffi_devel_CONTENTS="usr/lib/ usr/share/info/ usr/share/man/man3/"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	dodir /usr/bin
+	mv ${D}/usr/lib/${PN}/bin/* ${D}/usr/bin/
+	sed -i -e 's|\.\./bin/|../../../bin/|' ${D}/usr/lib/${PN}/lib/*.la
+}

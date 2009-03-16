@@ -1,0 +1,33 @@
+--- origsrc/libffi-3.0.8/Makefile.am	2009-03-16 02:29:56.046875000 -0500
++++ src/libffi-3.0.8/Makefile.am	2009-03-16 02:43:06.234375000 -0500
+@@ -79,7 +79,8 @@ AM_MAKEFLAGS = \
+ 
+ MAKEOVERRIDES=
+ 
+-lib_LTLIBRARIES = libffi.la
++ffilibdir = $(libdir)/@PACKAGE_NAME@/lib
++ffilib_LTLIBRARIES = libffi.la
+ noinst_LTLIBRARIES = libffi_convenience.la
+ 
+ libffi_la_SOURCES = src/debug.c src/prep_cif.c src/types.c \
+--- origsrc/libffi-3.0.8/include/Makefile.am	2008-02-14 09:37:00.000000000 -0600
++++ src/libffi-3.0.8/include/Makefile.am	2009-03-16 02:42:10.906250000 -0500
+@@ -5,5 +5,5 @@ AUTOMAKE_OPTIONS=foreign
+ DISTCLEANFILES=ffitarget.h
+ EXTRA_DIST=ffi.h.in ffi_common.h
+ 
+-includesdir = $(libdir)/@PACKAGE_NAME@-@PACKAGE_VERSION@/include
++includesdir = $(libdir)/@PACKAGE_NAME@/include
+ nodist_includes_HEADERS = ffi.h ffitarget.h 
+--- origsrc/libffi-3.0.8/libffi.pc.in	2008-04-03 13:57:34.000000000 -0500
++++ src/libffi-3.0.8/libffi.pc.in	2009-03-16 12:23:57.890625000 -0500
+@@ -1,7 +1,7 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+-libdir=@libdir@
+-includedir=${libdir}/@PACKAGE_NAME@-@PACKAGE_VERSION@/include
++libdir=@libdir@/@PACKAGE_NAME@/lib
++includedir=@libdir@/@PACKAGE_NAME@/include
+ 
+ Name: @PACKAGE_NAME@
+ Description: Library supporting Foreign Function Interfaces
