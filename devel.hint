@@ -1,5 +1,5 @@
 category: Libs
-requires: cygwin libffi5
+requires: libffi5
 external-source: libffi
 sdesc: "Portable foreign function interface library (development)"
 ldesc: "The libffi library provides a portable, high level programming 
