@@ -8,12 +8,3 @@ PKG_NAMES="${PN} ${PN}5 ${PN}-devel"
 PKG_HINTS="src dll devel"
 libffi5_CONTENTS="usr/bin/*-5.dll usr/share/doc/"
 libffi_devel_CONTENTS="usr/lib/ usr/share/info/ usr/share/man/man3/"
-
-src_install() {
-	cd ${B}
-	cyginstall
-
-	dodir /usr/bin
-	mv ${D}/usr/lib/${PN}/bin/* ${D}/usr/bin/
-	sed -i -e 's|\.\./bin/|../../../bin/|' ${D}/usr/lib/${PN}/lib/*.la
-}
