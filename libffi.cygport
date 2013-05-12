@@ -1,5 +1,5 @@
 NAME="libffi"
-VERSION=3.0.12
+VERSION=3.0.13
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Portable foreign function interface library"
