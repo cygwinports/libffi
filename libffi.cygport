@@ -1,5 +1,5 @@
 NAME="libffi"
-VERSION=3.0.13
+VERSION=3.2.1
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Portable foreign function interface library"
@@ -9,10 +9,18 @@ function specified by a call interface description at run-time."
 HOMEPAGE="http://sourceware.org/libffi/"
 SRC_URI="mirror://sourceware/libffi/libffi-${VERSION}.tar.gz"
 SRC_DIR="libffi-${VERSION}"
-PATCH_URI="3.0.12-cygwin.patch"
+PATCH_URI="http://pkgs.fedoraproject.org/cgit/libffi.git/plain/libffi-3.1-fix-include-path.patch"
 
 PKG_NAMES="libffi6 libffi-devel"
-libffi6_CONTENTS="usr/bin/*-6.dll"
-libffi_devel_CONTENTS="usr/lib/ usr/share/doc/ usr/share/info/ usr/share/man/man3/"
+libffi6_CONTENTS="usr/bin/*-6.dll usr/share/doc/"
+libffi_devel_CONTENTS="usr/include/ usr/lib/ usr/share/info/ usr/share/man/man3/"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	# not everything looks for headers with pkg-config yet
+	mv ${D}/usr/lib/libffi-${VERSION}/include/ ${D}/usr/
+}
 
 KEEP_LA_FILES="none"
