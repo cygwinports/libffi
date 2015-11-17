@@ -1,6 +1,6 @@
 NAME="libffi"
 VERSION=3.2.1
-RELEASE=1
+RELEASE=2
 CATEGORY="Libs"
 SUMMARY="Portable foreign function interface library"
 DESCRIPTION="The libffi library provides a portable, high level programming
@@ -9,7 +9,10 @@ function specified by a call interface description at run-time."
 HOMEPAGE="http://sourceware.org/libffi/"
 SRC_URI="mirror://sourceware/libffi/libffi-${VERSION}.tar.gz"
 SRC_DIR="libffi-${VERSION}"
-PATCH_URI="http://pkgs.fedoraproject.org/cgit/libffi.git/plain/libffi-3.1-fix-include-path.patch"
+PATCH_URI="
+	http://pkgs.fedoraproject.org/cgit/libffi.git/plain/libffi-3.1-fix-include-path.patch
+	3.2.1-win64-rewrite.patch
+"
 
 PKG_NAMES="libffi6 libffi-devel"
 libffi6_CONTENTS="usr/bin/*-6.dll usr/share/doc/"
